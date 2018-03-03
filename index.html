@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="UTF-8"> 
+	<title>Games Arena</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="GamesArenaController">
+		<div class="well">
+			<div class="row">
+				<div class="col-md-8">
+					<h2 class="text-primary  display-inline"><span class="glyphicon glyphicon-equalizer"></span> Games Arena</h2>
+				</div>
+				<div class="col-md-4">
+					<form>
+				        <div class="form-group">
+				        	<input type="text" class="form-control text-primary" placeholder="Search by name, platform, genre.." ng-model="name">
+				        </div>
+				    </form>
+				</div>
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        
+			      </button>
+			      <a class="navbar-brand purple">Platforms</a>
+			    </div>
+			     <hr/>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav nav-pills nav-stacked">
+			        <li role="presentation" ng-repeat="platform in platformList"><a ng-href="#!platform/{{$index}}">{{platform}}</a></li>
+			      </ul>
+			    </div>
+				
+				
+			</div>
+			<div class="col-md-10">
+				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+</script>
+
+</body>
+</html>

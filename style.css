@@ -1,0 +1,42 @@
+.icon-bar{
+	background-color: black;
+}
+
+.purple{
+	color:purple;
+	font-weight: bold;
+}
+
+
+.panel{
+	height:13em;
+}
+
+.editors_choice{
+	color:red;
+	font-weight: bold;
+}
+
+.badge.score{
+	color:white;
+	background-color: black;
+}
+
+.badge.platform{
+	color:black;
+	background-color: orange;
+}
+
+.badge.genre{
+	color:white;
+	background-color: black;
+}
+
+.badge.editors_choice{
+	color:white;
+	background-color: red;
+}
+
+.display-inline{
+	display: inline;
+}

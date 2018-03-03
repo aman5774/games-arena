@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<div class="row container-fluid">
+		<div class="col-md-8">
+			<h4 ng-model="platformName" class="display-inline text-success"><span class="glyphicon glyphicon-list-alt"></span> Total Games Found : {{GameDetailsList.length}}</h4>
+		</div>
+		<div class="col-md-4">
+			<div class="btn-group display-inline" role="group" aria-label="...">
+				<p><span class="glyphicon glyphicon-sort"></span> Sort By Score:
+				<button type="button" class="btn btn-default" ng-click="sortByScore('score')" data-toggle="tooltip" data-placement="top" title="Ascending"><span class="glyphicon glyphicon-circle-arrow-up"></span></button>
+				<button type="button" class="btn btn-default" ng-click="sortByScore('-score')" data-toggle="tooltip" data-placement="bottom" title="Descending"><span class="glyphicon glyphicon-circle-arrow-down"></span></button></p>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="row">
+		<div ng-repeat="game in GameDetailsList = (GameDetails | platformFilter:platformList[platformId] | orderBy:mySortByScore | filter:name)">
+			<div class="col-md-4">
+				<div class="panel panel-primary thumbnail">
+				  <div class="panel-heading">{{game.title}}</div>
+				  <div class="panel-body">
+				  	<div class="row">
+				  		<div class="col-sm-8"><p class="purple">Platform <span class="badge platform">{{game.platform}}</span></p></div>
+				  		<div class="col-sm-4"><p class="purple">Score <span class="badge score">{{game.score}}</span></p></div>
+				  	</div>
+				  	
+				  	<div class="row">
+				  		<div class="col-xs-6"><p class="purple">Genre <span class="badge genre">{{game.genre}}</span></p></div>
+				  		<div class="col-xs-6"><p class="pull-right editors_choice badge" ng-if="game.editors_choice=='Y'"><span class="glyphicon glyphicon-heart"> </span> Editor's Choice </p></div>
+				  	</div>	
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
